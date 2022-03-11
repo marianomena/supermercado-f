@@ -1,0 +1,19 @@
+.container{
+    height: 90vh;
+    min-height:600px;
+    overflow-x: hidden;
+}
+
+.vertical-align{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 50%;
+    text-align: center;
+}
+
+img.fondo-inicio{
+    max-width: 100%;
+    max-height: 300px;
+}
