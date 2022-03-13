@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
+import { ComponentsModule } from './components/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http'
     AppRoutingModule,
     PagesModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ComponentsModule
     
   ],
   providers: [],
