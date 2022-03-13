@@ -1,0 +1,59 @@
+<div class="container">
+
+    <form #form="ngForm"  (ngSubmit)="onSubmit(form)" autocomplete="off">
+
+        <h2>Formulario de acceso</h2>
+        <p><small>Ingrese sus datos para acceder al sistema</small></p>
+        <hr>
+        <div *ngIf="messajeError!=''">
+            <p class="alert alert-warning">{{messajeError}}</p>
+        </div>
+        <div *ngIf="messajeSuccess!=''">
+            <p class="alert alert-success">{{messajeSuccess}}</p>
+        </div>
+        <br>
+        <div class="example-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Ingrese su usuario</mat-label>
+              <input matInput 
+                     placeholder="pat@example.com" 
+                     name="userName"
+                     [class.id-invalid] = "userNameCntrl.invalid && userNameCntrl.touched"
+                     ngModel
+                     required
+                     #userNameCntrl = ngModel
+                     >
+              <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
+          </div>
+          <div class="example-container">
+
+            <mat-form-field appearance="outline">
+                <mat-label>Ingrese su password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'"  
+                    name="password" 
+                    [class.id-invalid] = "passwordCntrl.invalid && passwordCntrl.touched"
+                    ngModel
+                    required
+                    #passwordCntrl = ngModel
+
+                    >
+                <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <!-- <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error> -->
+
+            </mat-form-field>
+
+          </div>
+          <hr *ngIf="!loading">
+          <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+          <br>
+        <button type="submit" mat-raised-button color="primary" [disabled]="isDisabled">
+            <span *ngIf="!loading">Acceder</span>
+            <span *ngIf="loading">Loading...</span>
+        </button>
+
+    </form>
+
+</div>
