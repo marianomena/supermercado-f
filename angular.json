@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "supermercado"
+  "defaultProject": "supermercado",
+  "cli": {
+    "analytics": "c14ec87f-a964-49e2-8116-9882092c63bf"
+  }
 }

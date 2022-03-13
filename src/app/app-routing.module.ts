@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { RegistradoGuard } from './guards/registrado.guard';
 import { AdminProductosComponent } from './pages/admin-productos/admin-productos.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -20,7 +21,10 @@ const routes: Routes =[
                         },{
                           path:'admin/productos',
                           component: AdminProductosComponent,
-                          data:{ path: 'admin/productos' }
+                          data:{ path: 'admin/productos' },
+                          canActivate:[ RegistradoGuard ],
+                          canLoad:[ RegistradoGuard ],
+
                         },  
                                               
                         {path: '', redirectTo: '/home', pathMatch: 'full'},
