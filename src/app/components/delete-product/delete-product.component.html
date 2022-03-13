@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Editando item</h1>
+<div mat-dialog-content>
+    <p *ngIf="data">
+      Eliminando el item: <strong>{{data.name}}</strong>
+    </p>
+  
+    <p>Está seguro?</p>
+  
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="cancelar()">Cancelar</button>
+  <button color="warn" mat-raised-button (click)="deleteItem()">Eliminar</button>
+</div>

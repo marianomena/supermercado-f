@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Editando item</h1>
+<div mat-dialog-content>
+  <p *ngIf="data.item">{{data.item._id}}</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input #name matInput [ngModel]="data.item.name" (change)="actualizar('name', name)">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Descripción</mat-label>
+    <input #description matInput [ngModel]="data.item.description" (change)="actualizar('description', description)">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Categoria</mat-label>
+    <input #category matInput [ngModel]="data.item.category" (change)="actualizar('category', category)">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Precio</mat-label>
+    <input #price matInput [ngModel]="data.item.price" (change)="actualizar('price', price)">
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancelar()">Cerrar</button>
+  <button *ngIf="modo=='update'" mat-button (click)="guardarItem()">Guardar</button>
+  <button *ngIf="modo=='create'" mat-button (click)="crearItem()">Guardar</button>
+  <!-- <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Guardar Cambios</button> -->
+</div>

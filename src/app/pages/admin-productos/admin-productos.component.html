@@ -1,0 +1,42 @@
+<section>
+    <div class="container">
+
+        <h1>Administrador de productos</h1>
+
+        <div class="example-button-container">
+            <button mat-raised-button color="primary" (click)="agregarProducto()">Agregar producto</button>
+        </div>
+        <hr>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+                <th></th>
+            </tr>            
+            <tr *ngFor="let item of listaProductos;let indice=index">
+                <td>{{ indice + 1 }}</td>
+                <td>
+                    <strong>{{ item.name }}</strong>
+                </td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.category }}</td>
+                <td>
+                    <strong>$ {{ item.price }}</strong>
+                </td>
+                
+                <td>
+                    <button color="primary"  mat-icon-button (click)="edit(item)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button color="warn"  mat-icon-button (click)="deleteConfirmdDelete(item)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </table>
+          
+    </div>
+</section>

@@ -6,12 +6,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { ComponentsModule } from '../components/components.module';
 import { LoginComponent } from './login/login.component';
+import { AdminProductosComponent } from './admin-productos/admin-productos.component';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, ProductosComponent, LoginComponent],
+  declarations: [HomeComponent, ProductosComponent, LoginComponent, AdminProductosComponent],
   imports: [
     CommonModule,
     ComponentsModule,
@@ -23,7 +24,8 @@ import { LoginComponent } from './login/login.component';
   exports:[
     HomeComponent,
     ProductosComponent,
-    LoginComponent
+    LoginComponent, 
+    AdminProductosComponent
 
   ]
 })
